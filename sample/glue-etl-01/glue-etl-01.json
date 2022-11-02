@@ -1,0 +1,31 @@
+{
+    "Description": "",
+    "Role": "arn:aws-cn:iam::001234567890:role/service-role/AWSGlueServiceRole",
+    "ExecutionProperty": {
+        "MaxConcurrentRuns": 1
+    },
+    "Command": {
+        "Name": "glueetl",
+        "ScriptLocation": "s3://aws-glue-scripts-001234567890-cn-north-1/Beta/glue-etl-01/glue-etl-01.py",
+        "PythonVersion": "3"
+    },
+    "DefaultArguments": {
+        "--TempDir": "s3://aws-glue-temporary-001234567890-cn-north-1/Beta",
+        "--class": "GlueApp",
+        "--enable-continuous-cloudwatch-log": "true",
+        "--enable-glue-datacatalog": "true",
+        "--enable-job-insights": "true",
+        "--enable-metrics": "true",
+        "--enable-spark-ui": "true",
+        "--extra-jars": "s3://aws-glue-assets-001234567890-cn-north-1/jars/org.apache.hudi_hudi-spark3-bundle_2.12-0.9.0.jar,s3://aws-glue-assets-001234567890-cn-north-1/jars/spark-avro_2.12-3.1.1.jar,s3://aws-glue-assets-001234567890-cn-north-1/jars/calcite-core-1.32.0.jar",
+        "--job-bookmark-option": "job-bookmark-disable",
+        "--job-language": "python",
+        "--spark-event-logs-path": "s3://aws-glue-temporary-001234567890-cn-north-1/spark/"
+    },
+    "MaxRetries": 0,
+    "Timeout": 2880,
+    "WorkerType": "G.1X",
+    "NumberOfWorkers": 3,
+    "GlueVersion": "3.0"
+}
+
