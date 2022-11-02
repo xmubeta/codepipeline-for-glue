@@ -141,6 +141,8 @@ Create a Lambda Function with the following:
 
    `The folder name and script name is identical to Glue job name`
 
+   `Modify glue-etl-01.json with your information.`
+
 2. Push code to CodeCommit to create a Glue job.  The commit message needs to use format of `create <glue job name> xxx` .
 
     `git checkout -b main`
